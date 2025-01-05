@@ -17,5 +17,8 @@ void load_pawn(SDL_Renderer*render,int x , int y ) {
        SDL_SetRenderDrawColor(render , 255,255,255, 255) ; 
        SDL_RenderDrawRect(render , &rect) ; 
        SDL_RenderCopy(render, ourPNG ,NULL, &rect) ; 
+       SDL_FreeSurface(pown_image) ; 
+       SDL_DestroyTexture(ourPNG) ; 
+       //free(&rect) ; 
 
 } 

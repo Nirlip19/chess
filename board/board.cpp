@@ -34,7 +34,8 @@ for ( int j = 1 ;  j < 8 ; j++ ){
     }
     rect.y += 100 ;
 }
-
+      //free(&rect) ; 
+      //SDL_FreeSurface(sur)
       return 0 ; 
       
 }
@@ -49,5 +50,7 @@ int create_side_bar(SDL_Renderer *render  , int x , int y ){
         SDL_SetRenderDrawColor(render , 60 , 60 ,60 ,255) ; 
         SDL_RenderDrawRect(render , &rect) ; 
         SDL_RenderFillRect(render, &rect) ; 
+
+        //free(&rect) ; 
         return 0 ; 
 }
