@@ -19,6 +19,8 @@ typedef struct {
 
 }Pawn  ;
 
+
+
 void set_piece( Piece * ) ;
 void set_avalable_moves(Piece *) ; 
 void update_avalable_moves(Pose *) ; 

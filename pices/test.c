@@ -29,7 +29,7 @@ int main(){
               SDL_RenderClear(render) ; 
               create_chess_board(render , 20 , 40 ) ; 
               create_side_bar(render , 1000 , 40 ) ; 
-              set_piece(&pawn) ; 
+              
               load_pawn(render , pawn.pose) ; 
               
               Uint32 buttons ;
@@ -37,11 +37,12 @@ int main(){
                    if ( event.type == SDL_QUIT)is_game_running =false ;
                    if( event.button.button == SDL_BUTTON_LEFT){  
                    
-                    
+                     
                      SDL_GetMouseState(&mouse_pose.x , &mouse_pose.y ) ; 
+                
                      printf("you clicked on %d , %d \n" ,mouse_pose.x, mouse_pose.y ) ; 
                      update_pawn_pose(mouse_pose,&pawn.pose) ; 
-                     
+                     set_piece(&pawn) ;
                      set_avalable_moves(&pawn) ; 
                      
                      printf("corrent pose %d %d \n" ,pawn.pose.x ,pawn.pose.y) ; 

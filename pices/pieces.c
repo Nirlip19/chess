@@ -8,21 +8,354 @@
 
 
 void set_piece(Piece *piece ){   
-    
-    Pose up_right , up_left , down_right , down_left ; 
-    up_right.x = 920 ; 
-    up_right.y = 40 ; 
-    
-    up_left.x = 120 ; 
-    up_left.y = 40 ; 
-    
-    down_left.x = 120 ;
-    down_left.y = 840 ; 
+       int max_x =  920 ; 
+       int max_y =  40 ; 
+       int min_x = 120 ; 
+       int min_y = 740 ;
+       /*square 1 */
+       if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 40 ; 
+             }
+       /*square 2*/
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 40 ; 
+             }
 
-    down_right.x = 920 ; 
-    down_right.y = 840 ; 
-    //for x 
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 40 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 40 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 40 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 40 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 40 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 40 && piece->pose.y < 140){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 40 ; 
+             }
+                   
+                   
+       if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 140 ; 
+             }
+       /*square 2*/
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 140 ; 
+             }
 
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 140 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 140 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 140 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 140 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 140 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 140 && piece->pose.y < 240){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 140 ; 
+             }
+
+       /*row 3*/
+       if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 240 ; 
+             }
+       /*square 3*/
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 240 ; 
+             }
+
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 240 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 240 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 240 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 240 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 240 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 240 && piece->pose.y < 340){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 240 ; 
+             }   
+      /*row 4 */ 
+             if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 340 ; 
+             }
+       /*square 2*/
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 340 ; 
+             }
+
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 340 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 340 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 340 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 340 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 340 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 340 && piece->pose.y < 440){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 340 ; 
+             }
+      /*row 5 */  
+       if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 440 ; 
+             }
+       /*square 2*/
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 440 ; 
+             }
+
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 440 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 440 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 440 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 440 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 440 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 440 && piece->pose.y < 540){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 440 ; 
+             }      
+      /*row 6*/
+             if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 540 ; 
+             }
+       
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 540 ; 
+             }
+
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 540 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 540 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 540 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 540 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 540 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 540 && piece->pose.y < 640){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 540 ; 
+             }
+      /*raw 7*/
+       if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 640 ; 
+             }
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 640 ; 
+             }
+
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 640 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 640 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 640 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 640 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 640 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 640 && piece->pose.y < 740){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 640 ; 
+             }       
+      /*row 8 */
+             if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 120 ;
+                  piece->pose.y = 740 ; 
+             }
+       if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 220 ;
+                  piece->pose.y = 740 ; 
+             }
+
+       if ( (piece->pose.x > 320 && piece->pose.x < 420 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 320 ;
+                  piece->pose.y = 740 ; 
+             }
+       if ( (piece->pose.x > 420 && piece->pose.x < 520 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 420 ;
+                  piece->pose.y = 740 ; 
+             }
+       if ( (piece->pose.x > 520 && piece->pose.x < 620 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 520 ;
+                  piece->pose.y = 740 ; 
+             }
+      if ( (piece->pose.x > 620 && piece->pose.x < 720 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 620 ;
+                  piece->pose.y = 740 ; 
+             }
+      if ( (piece->pose.x > 720 && piece->pose.x < 820 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 720 ;
+                  piece->pose.y = 740 ; 
+             }
+      if ( (piece->pose.x > 820 && piece->pose.x < 920 ) && 
+             piece->pose.y > 740 && piece->pose.y < 840){   
+                  piece->pose.x = 820 ;
+                  piece->pose.y = 840 ; 
+             }
 }
 
 void load_pawn(SDL_Renderer * render , Pose pose ) {   
@@ -51,8 +384,8 @@ void update_pawn_pose( Pose  mouse_pose , Pose *pawn_pose  ){
                        ( mouse_pose.y <  min_y && mouse_pose.y > max_y)) ; 
        if ( in_board){ 
               
-             pawn_pose->x = mouse_pose.x - 50; 
-             pawn_pose->y = mouse_pose.y - 50; 
+             pawn_pose->x = mouse_pose.x; 
+             pawn_pose->y = mouse_pose.y; 
              printf("in board %b \n" , in_board) ; 
        }else {
              printf("out of chess board %b \n" , in_board ) ;
@@ -64,7 +397,6 @@ void update_pawn_pose( Pose  mouse_pose , Pose *pawn_pose  ){
 void update_avalable_moves(Pose * avalable_moves ) { 
 
             
-
  }
 
 void set_avalable_moves(Piece * pawn ) {  
