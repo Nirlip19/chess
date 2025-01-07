@@ -7,18 +7,16 @@
 
 
 
+
 void set_piece(Piece *piece ){   
-       int max_x =  920 ; 
-       int max_y =  40 ; 
-       int min_x = 120 ; 
-       int min_y = 740 ;
+
        /*square 1 */
        if ( (piece->pose.x > 120 && piece->pose.x < 220 ) && 
              piece->pose.y > 40 && piece->pose.y < 140){   
                   piece->pose.x = 120 ;
                   piece->pose.y = 40 ; 
              }
-       /*square 2*/
+
        if ( (piece->pose.x > 220 && piece->pose.x < 320 ) && 
              piece->pose.y > 40 && piece->pose.y < 140){   
                   piece->pose.x = 220 ;
@@ -358,23 +356,48 @@ void set_piece(Piece *piece ){
              }
 }
 
-void load_pawn(SDL_Renderer * render , Pose pose ) {   
-        SDL_Surface * image ; 
-        SDL_Texture * texture  ; 
-        SDL_Rect rect ; 
 
+void load_pawn(SDL_Renderer * render , Piece pawn  ) {   
+        SDL_Surface * image  ; 
+        SDL_Texture * texture ; 
+        SDL_Rect rect ; 
+         
         rect.w = 100 ; 
         rect.h = 100 ; 
-        rect.x = pose.x ; 
-        rect.y = pose.y  ; 
-
+        rect.x = pawn.pose.x ; 
+        rect.y = pawn.pose.y  ; 
+             
         image = IMG_Load("black-pawn.png") ; 
         texture = SDL_CreateTextureFromSurface(render , image) ; 
         SDL_RenderCopy(render , texture , NULL , &rect) ; 
+
         SDL_FreeSurface(image) ; 
         SDL_DestroyTexture(texture) ; 
+ 
 }
 
+void load_available_moves(SDL_Renderer* render , Piece* piece){ 
+      
+            SDL_Surface * image ; 
+            SDL_Texture * texture ; 
+            SDL_Rect rect ; 
+            rect.w = 50 ; 
+            rect.h = 50 ; 
+            
+            image = IMG_Load("moves.png") ; 
+            texture = SDL_CreateTextureFromSurface(render , image ) ; 
+            
+            for( int i = 0 ;  i <2 ; i++){  
+                 rect.x = piece->avalable_moves[i].x + 25; 
+                 rect.y = piece->avalable_moves[i].y + 25; 
+                 SDL_RenderDrawRect(render , &rect ) ;  
+                 SDL_RenderCopy(render , texture , NULL , &rect ) ;   
+                   }
+            
+            SDL_FreeSurface(image) ; 
+            SDL_DestroyTexture(texture) ; 
+   
+ }
 void update_pawn_pose( Pose  mouse_pose , Pose *pawn_pose  ){  
        int max_x =  920 ; 
        int max_y =  40 ; 
@@ -407,5 +430,5 @@ void set_avalable_moves(Piece * pawn ) {
        (*(moves+1)).y = pawn_init_pose.y - 200 ;
        (*(moves+1)).x = pawn_init_pose.x ;
        pawn->avalable_moves = moves ; 
-  
+       
 } 

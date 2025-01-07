@@ -11,7 +11,7 @@ int main(){
         SDL_Window *window ; 
         SDL_Renderer *render ; 
         Piece pawn ; 
-        pawn.avalable_moves =NULL ; 
+        pawn.avalable_moves = NULL ; 
         window = SDL_CreateWindow("chess", 20 ,20 ,1600 ,1000 , SDL_WINDOW_SHOWN) ;
         render = SDL_CreateRenderer(window , -1 , 0 ) ;    
 
@@ -29,9 +29,10 @@ int main(){
               SDL_RenderClear(render) ; 
               create_chess_board(render , 20 , 40 ) ; 
               create_side_bar(render , 1000 , 40 ) ; 
-              
-              load_pawn(render , pawn.pose) ; 
-              
+            
+              load_pawn(render , pawn) ; 
+             
+              //load_available_moves(render , &pawn ) ; 
               Uint32 buttons ;
               while ( SDL_PollEvent(&event)){  
                    if ( event.type == SDL_QUIT)is_game_running =false ;
@@ -39,20 +40,22 @@ int main(){
                    
                      
                      SDL_GetMouseState(&mouse_pose.x , &mouse_pose.y ) ; 
-                
+                     //get_mouse_squer(&mouse_pose) ; 
                      printf("you clicked on %d , %d \n" ,mouse_pose.x, mouse_pose.y ) ; 
                      update_pawn_pose(mouse_pose,&pawn.pose) ; 
                      set_piece(&pawn) ;
                      set_avalable_moves(&pawn) ; 
-                     
+                     load_available_moves(render , &pawn) ; 
+                     /*
                      printf("corrent pose %d %d \n" ,pawn.pose.x ,pawn.pose.y) ; 
                      printf("pawns avalable moves %d ,%d and %d ,%d\n", 
                                     pawn.avalable_moves[0].x , pawn.avalable_moves[0].y ,
                                     pawn.avalable_moves[1].x , pawn.avalable_moves[1].y) ; 
-               
+                     */
                      
                      free(pawn.avalable_moves) ;
-                   }              
+                   }     
+                             
               }
               
              SDL_RenderPresent(render) ; 
