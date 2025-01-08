@@ -12,7 +12,8 @@ int main(){
         SDL_Window *window ; 
         SDL_Renderer *render ; 
         Piece pawn ; 
-        pawn.avalable_moves = NULL ; 
+        pawn.avalable_moves = NULL ;
+        pawn.is_seleced = false ;  
         window = SDL_CreateWindow("chess", 20 ,20 ,1600 ,1000 , SDL_WINDOW_SHOWN) ;
         render = SDL_CreateRenderer(window , -1 , 0 ) ;    
 
@@ -30,39 +31,28 @@ int main(){
               SDL_RenderClear(render) ; 
               create_chess_board(render , 20 , 40 ) ; 
               create_side_bar(render , 1000 , 40 ) ; 
-            
-              load_pawn(render , pawn) ; 
-             
-             
-              Uint32 buttons ;
-              while ( SDL_PollEvent(&event)){  
-                   if ( event.type == SDL_QUIT)is_game_running =false ;
-                   if( event.button.button == SDL_BUTTON_LEFT){  
-                   
-                     
-                     SDL_GetMouseState(&mouse_pose.x , &mouse_pose.y ) ; 
-                     set_pose(&mouse_pose) ;
-                     printf("you clicked on %d , %d \n" ,mouse_pose.x, mouse_pose.y ) ; 
-                     update_pawn_pose(mouse_pose,&pawn.pose) ; 
-                   //  set_pose(&pawn.pose) ;
-                     
-                     set_avalable_moves(&pawn) ; 
-                     load_available_moves(render , &pawn) ; 
-                     /*
-                     printf("corrent pose %d %d \n" ,pawn.pose.x ,pawn.pose.y) ; 
-                     printf("pawns avalable moves %d ,%d and %d ,%d\n", 
-                                    pawn.avalable_moves[0].x , pawn.avalable_moves[0].y ,
-                                    pawn.avalable_moves[1].x , pawn.avalable_moves[1].y) ; 
-                     */
-                     
-                     free(pawn.avalable_moves) ;
-                   }     
-                             
-              }
               
+              load_pawn(render , pawn) ; 
+              set_avalable_moves(&pawn) ;
+              load_available_moves(render , &pawn) ; 
+              SDL_GetMouseState(&mouse_pose.x , &mouse_pose.y) ;
+              set_pose(&mouse_pose) ;
+              
+              while ( SDL_PollEvent(&event)){  
+   
+                   if ( event.type == SDL_QUIT)is_game_running =false ;
+                   if( event.type == SDL_MOUSEBUTTONDOWN){
+                      if ( event.button.button == SDL_BUTTON_LEFT){
+                           printf("mouse state (%d  , %d)\n " , mouse_pose.x , mouse_pose.y) ; 
+                           check_if_piece_selected(&pawn , &mouse_pose) ; 
+                           printf("pown state %b \n " , pawn.is_seleced ) ; 
+                              }
+                         } 
+                     
+                   }     
+             free(pawn.avalable_moves) ; 
              SDL_RenderPresent(render) ; 
-        }
-        
-        
+          }
+             
         SDL_Quit() ; 
-}
+      }

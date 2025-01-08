@@ -6,6 +6,14 @@
 #include "../headers/define.h"
 #include "../headers/headers.h"
 
+void check_if_piece_selected(Piece *piece , Pose *mouse ){ 
+  
+      if ( mouse->x == piece->pose.x && mouse->y == piece->pose.y){
+          if ( piece->is_seleced == true) piece->is_seleced = false ; 
+          else piece->is_seleced =true  ;
+
+     }
+} 
 
 void load_pawn(SDL_Renderer * render , Piece pawn  ) {   
         SDL_Surface * image  ; 
@@ -27,7 +35,7 @@ void load_pawn(SDL_Renderer * render , Piece pawn  ) {
 }
 
 void load_available_moves(SDL_Renderer* render , Piece* piece){ 
-      
+      if ( piece->is_seleced == true ){ 
             SDL_Surface * image ; 
             SDL_Texture * texture ; 
             SDL_Rect rect ; 
@@ -43,9 +51,10 @@ void load_available_moves(SDL_Renderer* render , Piece* piece){
                  SDL_RenderDrawRect(render , &rect ) ;  
                  SDL_RenderCopy(render , texture , NULL , &rect ) ;   
                    }
-            
+      
             SDL_FreeSurface(image) ; 
             SDL_DestroyTexture(texture) ; 
+      }
    
  }
 void update_pawn_pose( Pose  mouse_pose , Pose *pawn_pose  ){  
@@ -53,8 +62,8 @@ void update_pawn_pose( Pose  mouse_pose , Pose *pawn_pose  ){
        int max_y =  40 ; 
        int min_x = 120 ; 
        int min_y = 740 ; 
-       bool in_board = ((mouse_pose.x > min_x &&  mouse_pose.x < max_x) && 
-                       ( mouse_pose.y <  min_y && mouse_pose.y > max_y)) ; 
+       bool in_board = ((mouse_pose.x >= min_x &&  mouse_pose.x <= max_x) && 
+                       ( mouse_pose.y <=  min_y && mouse_pose.y >= max_y)) ; 
        if ( in_board){ 
               
              pawn_pose->x = mouse_pose.x; 

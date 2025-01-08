@@ -5,9 +5,9 @@
 
 
 
-void set_pose( Pose * pose ) {   
+void set_pose( Pose * pose  ) {   
 
-       
+ 
        if ( (pose->x > 120 && pose->x < 220 ) && 
              pose->y > 40 && pose->y <140){   
                   pose->x = 120 ;
@@ -350,5 +350,7 @@ void set_pose( Pose * pose ) {
                   pose->x = 820 ;
                   pose->y = 840 ; 
              }
+
+   
 }
 
