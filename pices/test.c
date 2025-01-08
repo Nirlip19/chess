@@ -4,7 +4,8 @@
 #include "pieces.h"
 #include <stdlib.h>
 #include <stdbool.h>
-
+#include "../headers/headers.h"
+#include "../headers/define.h"
 
 int main(){   
         SDL_Init(SDL_INIT_VIDEO) ; 
@@ -32,7 +33,7 @@ int main(){
             
               load_pawn(render , pawn) ; 
              
-              //load_available_moves(render , &pawn ) ; 
+             
               Uint32 buttons ;
               while ( SDL_PollEvent(&event)){  
                    if ( event.type == SDL_QUIT)is_game_running =false ;
@@ -40,10 +41,11 @@ int main(){
                    
                      
                      SDL_GetMouseState(&mouse_pose.x , &mouse_pose.y ) ; 
-                     //get_mouse_squer(&mouse_pose) ; 
+                     set_pose(&mouse_pose) ;
                      printf("you clicked on %d , %d \n" ,mouse_pose.x, mouse_pose.y ) ; 
                      update_pawn_pose(mouse_pose,&pawn.pose) ; 
-                     set_piece(&pawn) ;
+                   //  set_pose(&pawn.pose) ;
+                     
                      set_avalable_moves(&pawn) ; 
                      load_available_moves(render , &pawn) ; 
                      /*

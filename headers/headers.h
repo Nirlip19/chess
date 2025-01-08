@@ -1,20 +1,17 @@
 #include <SDL2/SDL_image.h> 
 #include <SDL2/SDL.h>
-
+#ifndef POSE_H 
+#define POSE_H 
 typedef struct { 
      
          int x ; 
          int y ; 
- } Pose; 
+ } Pose ; 
 
 typedef struct {  
       Pose pose ; 
       Pose * avalable_moves ; 
 } Piece ; 
 
-typedef struct {
-      
-      Pose pose ; 
-      
-} Square ; 
-
+#endif
+void set_pose( Pose * ) ; 
