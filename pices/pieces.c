@@ -89,5 +89,4 @@ void set_avalable_moves(Piece * pawn ) {
        (*(moves+1)).y = pawn_init_pose.y - 200 ;
        (*(moves+1)).x = pawn_init_pose.x ;
        pawn->avalable_moves = moves ; 
-       
 } 
