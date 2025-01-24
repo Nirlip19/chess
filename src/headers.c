@@ -118,19 +118,7 @@ void LoadPiece(SDL_Renderer * render,Piece piece , const char *file_name){
                 
 
  }
-void HandleInput(bool * is_running){
-       SDL_Event event ; 
-       while ( SDL_PollEvent(&event)){
-               if(event.type == SDL_QUIT)*is_running = false ;
-               if(event.type == SDL_MOUSEBUTTONDOWN){
-                         if( event.button.button == SDL_BUTTON_LEFT){
-                               // IsPieceSelected( &white_Pawn1 , MouseState) ;
-                               // printf("white pawn1 selected : %b\n" , white_Pawn1.is_selected ) ;  
-                           }
-                   } 
-       }
 
-}
 
 void CleanUp(){
      IMG_Quit() ; 

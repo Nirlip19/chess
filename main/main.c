@@ -91,31 +91,52 @@ int main(){
 	        black_Bishop2 = {{620 , 40},NULL  ,false  } ;   
 	        black_King = {{520 , 40},NULL  ,false  } ;   
 	        black_Queen = {{420 , 40},NULL  ,false  } ;   
-           
-	  CreateWindow(window , render ) ;
+                SDL_Init(SDL_INIT_VIDEO)  ; 
+                IMG_Init(IMG_INIT_PNG) ;  
+                window = SDL_CreateWindow("title" , 20 ,20 , 1600, 1000 , SDL_WINDOW_SHOWN) ;           
+                render = SDL_CreateRenderer(window , -1 , 0 ) ;  
 	  while(is_running){
 	       SDL_GetMouseState(&MouseState.x, &MouseState.y) ;
 	       set_pose(&MouseState) ; 
 	       SDL_SetRenderDrawColor(render,50 , 0 , 0 , 255) ; 
 	       SDL_RenderClear(render) ; 
-	       HandleInput(&is_running) ; 
 	       SetUpChessBoard(render ) ;
-	       LoadPiece(render ,white_Pawn1 ,"white-pawn.png") ;  
-	       LoadAvailableMoves( render , white_Pawn1)  ; 
-         
+	       SDL_Event event ; 
+               while ( SDL_PollEvent(&event)){
+
+		       if(event.type == SDL_QUIT)is_running = false ;
+		       if(event.type == SDL_MOUSEBUTTONDOWN){
+				 if( event.button.button == SDL_BUTTON_LEFT){
+                                     IsPieceSelected( &white_Pawn1 , MouseState) ;
+                                     IsPieceSelected( &white_Pawn2 , MouseState) ;
+                                     IsPieceSelected( &white_Pawn3 , MouseState) ;
+                                     IsPieceSelected( &white_Pawn4 , MouseState) ;
+                                     IsPieceSelected( &white_Pawn5 , MouseState) ;
+                                     IsPieceSelected( &white_Pawn6 , MouseState) ;
+                                     IsPieceSelected( &white_Pawn7 , MouseState) ;
+                                     IsPieceSelected( &white_Pawn8 , MouseState) ;
+                             }
+                        } 
+                }
+
+
+
+	       LoadPiece(render ,white_Pawn1 ,"white-pawn.png") ;    
+               LoadAvailableMoves(render,white_Pawn1 )  ; 
 	       LoadPiece(render ,white_Pawn2 ,"white-pawn.png") ;
-
+               LoadAvailableMoves(render,white_Pawn2 )  ; 
 	       LoadPiece(render ,white_Pawn3 ,"white-pawn.png") ;   
-
+               LoadAvailableMoves(render,white_Pawn3 )  ; 
 	       LoadPiece(render ,white_Pawn4 ,"white-pawn.png") ;   
-
+               LoadAvailableMoves(render,white_Pawn4 )  ; 
 	       LoadPiece(render ,white_Pawn5 ,"white-pawn.png") ;   
-	       
+               LoadAvailableMoves(render,white_Pawn5 )  ; 
                LoadPiece(render ,white_Pawn6 ,"white-pawn.png") ;   
-
+               LoadAvailableMoves(render,white_Pawn6 )  ; 
 	       LoadPiece(render ,white_Pawn7 ,"white-pawn.png") ;   
+               LoadAvailableMoves(render,white_Pawn7 )  ; 
 	       LoadPiece(render ,white_Pawn8 ,"white-pawn.png") ;  
-
+               LoadAvailableMoves(render,white_Pawn8 )  ; 
 	       LoadPiece(render ,white_Rook1,"white-rook.png") ;   
 	       LoadPiece(render ,white_Rook2 ,"white-rook.png") ;   
 	       LoadPiece(render ,white_Night1 ,"white-knight.png") ;   
@@ -124,6 +145,7 @@ int main(){
 	       LoadPiece(render ,white_Bishop2 ,"white-bishop.png") ;   
 	       LoadPiece(render ,white_King ,"white-king.png") ;   
 	       LoadPiece(render ,white_Queen ,"white-queen.png") ;   
+
 
 	       LoadPiece(render ,black_Pawn1 ,"black-pawn.png") ;   
 	       LoadPiece(render ,black_Pawn2 ,"black-pawn.png") ;   
